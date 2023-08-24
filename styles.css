@@ -1,0 +1,255 @@
+/* Your existing CSS styles */
+
+/* Mint green color theme */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Text color */
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: transparent; /* Initial transparent background */
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+    position: fixed; /* Fixed position for scrolling */
+    top: 0; /* Stick to the top */
+    width: 100%; /* Full width */
+    padding: 20px 0;
+    transition: transform 0.2s ease-out;
+    z-index: 1; /* Ensure the navbar is above content */
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 15px; /* Add spacing between navigation items */
+    position: relative; /* Add relative positioning for ::after */
+    overflow: hidden; /* Hide overflow to prevent line overflow */
+}
+
+nav a {
+    text-decoration: none; /* Remove default underline */
+    position: relative; /* Add relative positioning for ::after */
+    color: #fff; /* Text color */
+}
+
+nav a::after {
+    content: ''; /* Empty content for ::after */
+    position: absolute;
+    bottom: -2px; /* Position the line at the bottom */
+    left: 50%; /* Start from the middle */
+    width: 0; /* Initial width of 0 */
+    height: 2px; /* Height of the line */
+    background-color: white; /* White line color */
+    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out; /* Add transitions */
+    transform: translateX(-50%); /* Center horizontally */
+}
+
+nav a:hover::after {
+    width: 100%; /* Expand width to 100% on hover */
+    transform: translateX(-50%) scaleX(1); /* Expand horizontally from the middle */
+}
+
+.hide-navbar {
+    transform: translateY(-100%);
+}
+
+
+/* Mint green color for titles and headings */
+h1, h2, h3 {
+    color: rgb(130, 79, 207);
+}
+
+
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #fff; /* White text color */
+}
+
+
+/* Social media icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s; /* Add transition for smooth effect */
+}
+
+/* Invert color on hover */
+.social-icons img:hover {
+    filter: brightness(0) invert(0);
+}
+
+
+
+
+/* Your existing CSS styles */
+
+/* Apply gradient animation to the title section */
+.title-section {
+    background: linear-gradient(-60.76deg,rgb(130, 79, 207) 0%,rgb(212,153,234) 57.96%,rgb(238,164,179) 100%);
+    background-size: 400% 400%;
+	animation: gradient 20s ease infinite;
+	position: relative;
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    
+    /*
+    animation: gradient 15s ease infinite;
+    position: relative;
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    */
+}
+
+/* Create white hexagons in top right and bottom left corners */
+
+.title-section::before {
+    top: -50px;
+    right: -50px;
+}
+
+.title-section::after {
+    bottom: -50px;
+    left: -50px;
+}
+
+/* Name styling */
+.name {
+    font-size: 6rem; /* Adjust font size as needed */
+    margin-top: -10px; /* Adjust margin to move it higher up */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the about section container */
+.about-container {
+    background-color: #f5f5f5; /* Light gray background color */
+    padding: 50px 0; /* Add some padding for spacing */
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the circular profile image container */
+.profile-image {
+    width: 290px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    border-radius: 50%; /* Create a circular shape */
+    overflow: hidden; /* Hide anything outside the circular area */
+    margin-right: 20px; /* Add spacing between image and content */
+    margin-left: 20px;
+}
+
+/* Apply circular mask to the image */
+.profile-image img {
+    width: 100%; /* Make the image cover the container */
+    height: 100%; /* Make the image cover the container */
+    mask: radial-gradient(circle at center, transparent 49%, white 50%);
+    /* The above line sets a radial gradient mask with a solid color inside the circle */
+}
+
+/* Style for the about content */
+.about-content {
+    flex: 1; /* Allow content to take remaining width */
+    display: flex; /* Use flexbox to center vertically and horizontally */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center the text */
+}
+
+/* Increase the size of the "About Me" text */
+.about-content h2 {
+    font-size: 2rem; /* Adjust font size as needed */
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: 2px solid rgb(130, 79, 207); /* Purple outline */
+    color: rgb(130, 79, 207);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.resume-button:hover {
+    background-color: rgb(130, 79, 207);
+    color: white;
+}
+
+#work-section h2 {
+    text-align: center; /* Center align the title */
+    margin-top: 50px; /* Add some top margin for spacing */
+}
+
+.work-entry {
+    margin-bottom: 20px; /* Add some spacing between entries */
+    position: relative;
+    margin-left: 20px; /* Add indentation from the left wall */
+}
+
+
+.work-entry h3 {
+    margin-top: 0; /* Remove default margin */
+}
+
+.work-entry p {
+    margin: 10px 0; /* Add margin for spacing between paragraphs */
+    margin-left: 20px;
+}
+
+/* ... any other existing styles ... */
+
+
+
+
+
+
+
+/* Keyframes for smooth gradient color transition */
+@keyframes gradient{
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
