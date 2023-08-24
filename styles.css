@@ -190,11 +190,14 @@ h1, h2, h3 {
     align-items: center; /* Center horizontally */
     justify-content: center; /* Center vertically */
     text-align: center; /* Center the text */
+    margin-left: calc(10% - 50px);
+    margin-right: calc(10% - 50px);
 }
 
 /* Increase the size of the "About Me" text */
 .about-content h2 {
     font-size: 2rem; /* Adjust font size as needed */
+    margin-top: 0px;
 }
 
 .resume-button {
@@ -215,29 +218,75 @@ h1, h2, h3 {
 #work-section h2 {
     text-align: center; /* Center align the title */
     margin-top: 50px; /* Add some top margin for spacing */
+    font-size: 2rem; /* Adjust font size as needed */
+    
 }
 
 .work-entry {
-    margin-bottom: 20px; /* Add some spacing between entries */
-    position: relative;
-    margin-left: 20px; /* Add indentation from the left wall */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 10px 0;
+    margin-left: calc(20% - 50px);
+    margin-right: calc(20% - 50px);
+    border-bottom: 1px solid #797979;
+    padding-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
 }
 
+.work-entry.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+.work-entry:last-child {
+    border-bottom: none; /* Remove the border-bottom for the last work entry */
+    padding-bottom: 0; /* Reset the padding for the last work entry */
+}
 
 .work-entry h3 {
-    margin-top: 0; /* Remove default margin */
+    margin: 5px 0; /* Reduce margin around the job title */
+    font-size: 24px;
+    color: black;
 }
 
-.work-entry p {
-    margin: 10px 0; /* Add margin for spacing between paragraphs */
-    margin-left: 20px;
+.work-entry .company-name{
+    margin: 2px 0; /* Reduce margin around the company and dates */
+    font-size: 16px;
+    color: rgb(130, 79, 207);
 }
+
+.work-entry .dates{
+    margin: 2px 0; /* Reduce margin around the company and dates */
+    font-size: 16px;
+    color: #888;
+}
+
+
+
+
+
 
 /* ... any other existing styles ... */
 
 
 
+#contact-section {
+    background-color: #f5f5f5; /* Light gray background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center the text */
+    font-size: .9em;
+}
 
+#contact-section p {
+    color: #888; /* Use the mint green color for the title */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 
 
