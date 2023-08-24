@@ -25,14 +25,34 @@ window.addEventListener('scroll', () => {
     }
 });
 
-particlesJS("title-content", {
-    particles: {
-        number: {
-            value: 500, // Number of particles
-        },
-        color: {
-            value: "#2ecc71", // Particle color
-        },
-        // More configuration options...
-    },
+// Get all work entry elements
+const workEntries = document.querySelectorAll('.work-entry');
+
+// Define options for the Intersection Observer
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2 // Adjust the threshold as needed
+};
+
+// Callback function to handle the intersection
+function handleIntersection(entries, observer) {
+    console.log("Observer callback triggered!");
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            console.log("Entry is intersecting!");
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target); // Stop observing after appearance
+        }
+    });
+}
+
+// Create an Intersection Observer instance
+const entryObserver = new IntersectionObserver(handleIntersection, observerOptions);
+
+// Observe each work entry element
+workEntries.forEach(entry => {
+    entryObserver.observe(entry);
 });
+
+
