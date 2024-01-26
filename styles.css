@@ -166,7 +166,7 @@ h1, h2, h3 {
 
 /* Style for the circular profile image container */
 .profile-image {
-    width: 290px; /* Adjust width as needed */
+    width: 280px; /* Adjust width as needed */
     height: 300px; /* Adjust height as needed */
     border-radius: 50%; /* Create a circular shape */
     overflow: hidden; /* Hide anything outside the circular area */
@@ -178,7 +178,7 @@ h1, h2, h3 {
 .profile-image img {
     width: 100%; /* Make the image cover the container */
     height: 100%; /* Make the image cover the container */
-    mask: radial-gradient(circle at center, transparent 49%, white 50%);
+    mask: radial-gradient(ellipse at center);
     /* The above line sets a radial gradient mask with a solid color inside the circle */
 }
 
